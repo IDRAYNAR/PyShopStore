@@ -1,0 +1,45 @@
+.title_and_btn {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.title_and_btn button {
+  padding: 10px 30px;
+  border-radius: 5px;
+  border: solid black 1px;
+  background-color: #f2f2f2;
+  cursor: pointer;
+}
+
+section {
+  display:flex;
+  gap:10px;
+}
+
+section a {
+  text-decoration: none;
+  color: black;
+}
+
+hr {
+  width: 50%;
+  margin: 20px auto;
+}
+
+.product_container {
+  border: solid black 1px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.product_container:hover {
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.5);
+  transition: all 0.5s ease;
+}
