@@ -1,4 +1,7 @@
 from django.db import models
+from django import forms
+
+
 
 # Create your models here.
 class Product(models.Model):
@@ -10,3 +13,13 @@ class Product(models.Model):
     
     def __str__(self):
         return self.name
+
+
+
+class ProductEditForm(forms.ModelForm):
+    class Meta:
+        model = Product
+        fields = ['name', 'price', 'stock', 'image_url', 'description']
+
+
+

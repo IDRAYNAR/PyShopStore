@@ -1,5 +1,4 @@
 {% load static %}
-
 <!DOCTYPE html>
 <html lang="fr">
   <head>
@@ -7,29 +6,33 @@
     <title>Product</title>
     <meta name="description" content="" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
-    <link rel="stylesheet" href="{% static 'style/product.css' %}" />
+    <link rel="stylesheet" href="{% static 'style/product.css' %}">
   </head>
+
   <body>
     <div class="title_and_btn">
-      <h1>Product</h1>
+        <h1>Product</h1>
+        <hr>
+        <div class="custom_btn">
+            <a href="edit"><button>Edit</button></a>
+            <form method="post" action="delete">
+                {% csrf_token %}
+                <button type="submit">Delete</button>
+            </form>
+        </div>
     </div>
     <section>
-      <div class="product_container">
-        <div>
-          <img src="{{ product.image_url }}" width="250px" height="200px" />
+        <div class="product_container">
+            <div>
+                <img src="{{ product.image_url }}" width="250px" height="200px">
+            </div>
+            <div class="product_id">
+                <div> {{ product.name }}</div>
+                <div><b>{{ product.price }} $</b></div>
+                <div class="stock"><b>{{ product.stock }}</b> In Stock</div>
+                <div> {{ product.description }}</div>
+            </div>
         </div>
-        <hr />
-        <div>
-          <div>name: {{ product.name }}</div>
-          <div>price: {{ product.price }}</div>
-          <div>stock: {{ product.stock }}</div>
-          <div>description: {{ product.description }}</div>
-        </div>
-        <div>
-            <a href=" "><button>Edit</button></a>
-            <a href=" "><button>Delete</button></a>
-        </div>
-      </div>
     </section>
   </body>
 </html>
