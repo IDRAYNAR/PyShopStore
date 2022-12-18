@@ -1,4 +1,5 @@
 {% load static %}
+
 <!DOCTYPE html>
 <html lang="fr">
   <head>
@@ -6,32 +7,30 @@
     <title>Index</title>
     <meta name="description" content="" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
-    <link rel="stylesheet" href="{% static 'style/index.css' %}">
-    
+    <link rel="stylesheet" href="{% static 'style/index.css' %}" />
   </head>
 
   <body>
     <div class="title_and_btn">
-        <h1>Product</h1>
-        <div><button>add</button></div>
+      <h1>Product</h1>
+      <div><button>add</button></div>
     </div>
     <section>
-        
-    {% for data in products %}.
-        <a href="products/{{ data.id}}">
-            <div class="product_container">
-                <div>
-                    <img src="{{ data.image_url }}" width="250px" height="200px">
-                </div>
-                <hr>
-                <div>
-                    <div>name: {{ data.name }}</div>
-                    <div>price: {{ data.price }}</div>
-                    <div>stock: {{ data.stock }}</div>
-                </div>
-            </div>
-        </a>
-        {% endfor %}
+      {% for data in products %}.
+      <a href="products/{{ data.id}}">
+        <div class="product_container">
+          <div>
+            <img src="{{ data.image_url }}" width="250px" height="200px" />
+          </div>
+          <hr />
+          <div>
+            <div>name: {{ data.name }}</div>
+            <div>price: {{ data.price }}</div>
+            <div>stock: {{ data.stock }}</div>
+          </div>
+        </div>
+      </a>
+      {% endfor %}
     </section>
   </body>
 </html>
